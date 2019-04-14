@@ -58,7 +58,7 @@ while(n!=0)
 {
 	  if((i!=j)&&(flag[i]==1)&&(need[j]!=0))
 	  
-waiting_time[j]+=ts;
+waiting_time[j]+=ts;			////calculation of waiting time
        }
       
 
@@ -99,7 +99,7 @@ flag[i]=0;
 for(i=1;i<=n1;i++)
 
 {
-  turnaround_time[i]=waiting_time[i]+bt[i]; 
+  turnaround_time[i]=waiting_time[i]+bt[i]; 				////calculation of turnaround time
   
 total_waiting_time=total_waiting_time+waiting_time[i];			//calculation of total waiting time
   
