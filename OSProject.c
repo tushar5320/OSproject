@@ -45,6 +45,7 @@ scanf("%d",&bt[i]);
    need[i]=bt[i];
    if(pid[i]<=0 || bt[i]<=0 )
    {c= 'D';
+   break;
    }
  }
 
