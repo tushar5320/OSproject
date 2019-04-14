@@ -1,7 +1,3 @@
-
-/* ROUND ROBIN SCHEDULING ALGORITHM */
-
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
@@ -12,7 +8,7 @@ int main()
  int ts,pid[10],need[10],waiting_time[10],turnaround_time[10],i,j,n,n1;
  int bt[10],flag[10],total_turnaround_time=0,total_waiting_time=0;
  float average_waiting_time,average_turnaround_time;
-
+char c;
 
  printf("\t\t ROUND ROBIN SCHEDULING"); 
 printf("\n\nEnter the number of Processors \n");
@@ -20,13 +16,25 @@ printf("\n\nEnter the number of Processors \n");
 scanf("%d",&n);
 
  n1=n;
- 
+ if(n1<=0)
+ {
+ 	c='D';
+ }
+
 printf("\n Enter the Timeslice \n");
  
 scanf("%d",&ts);
+if(ts<=0)
+{
+	c= 'D';
+}
  for(i=1;i<=n;i++)
 
  {
+ 	 if(c=='D')
+ {  break;
+ 	
+ }
    printf("\n Enter the process ID %d",i);
    
 scanf("%d",&pid[i]);
@@ -35,6 +43,9 @@ printf("\n Enter the Burst Time for the process");
    
 scanf("%d",&bt[i]);
    need[i]=bt[i];
+   if(pid[i]<=0 || bt[i]<=0 )
+   {c= 'D';
+   }
  }
 
  for(i=1;i<=n;i++)
@@ -47,6 +58,10 @@ scanf("%d",&bt[i]);
 while(n!=0)
 
  {
+ 	 if(c=='D')
+ {  break;
+ 	
+ }
    for(i=1;i<=n;i++)
    
 {
@@ -98,7 +113,11 @@ flag[i]=0;
 
 for(i=1;i<=n1;i++)
 
-{
+{ if(c=='D')
+ {
+  break;
+ 	
+ }
   turnaround_time[i]=waiting_time[i]+bt[i]; 				////calculation of turnaround time
   
 total_waiting_time=total_waiting_time+waiting_time[i];			//calculation of total waiting time
@@ -118,12 +137,24 @@ printf("\n\n Process \t Process ID  \t BurstTime \t Waiting Time \t TurnaroundTi
 
 for(i=1;i<=n1;i++)
 {
+	if(c=='D')
+ {
+  break;
+ 	
+ }
  printf("\n%8d \t  %4d \t \t %4d \t\t  %4d \t\t  %4d \n", i,pid[i],bt[i],waiting_time[i],turnaround_time[i]);
 }
 
-
+if(c=='D')
+ {printf("Invalid Input"); 
+  
+ 	
+ }
+ else
+ {
+ 
 printf("\n The average Waiting Time =%f",average_waiting_time);
 
 printf("\n The average Turn around Time =%f",average_turnaround_time);
-
+}
 }         
