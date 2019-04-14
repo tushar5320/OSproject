@@ -101,10 +101,9 @@ for(i=1;i<=n1;i++)
 {
   turnaround_time[i]=waiting_time[i]+bt[i]; 
   
-total_waiting_time=total_waiting_time+waiting_time[i];
+total_waiting_time=total_waiting_time+waiting_time[i];			//calculation of total waiting time
   
-total_turnaround_time=total_turnaround_time+turnaround_time[i];
-
+total_turnaround_time=total_turnaround_time+turnaround_time[i];		//calculation of total turnaround time
 }
 system("cls");
 
