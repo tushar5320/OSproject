@@ -83,7 +83,7 @@ else
  {
 	  if((i!=j)&&(flag[i]==1)&&(need[j]!=0))
 	  
-waiting_time[j]+=need[i];
+waiting_time[j]+=need[i];				//calculation of waiting time
        }
        
 need[i]=0;
